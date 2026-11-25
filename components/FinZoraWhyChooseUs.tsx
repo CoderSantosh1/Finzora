@@ -32,15 +32,15 @@ export default function FinZoraWhyChooseUs() {
             <span className="text-[#d9002b]">{siteData.common.site.name}</span>
           </span>
 
-          <h2 className="mt-6 text-[clamp(30px,3.7vw,56px)] font-extrabold leading-[1.18] tracking-[-0.02em] text-[#14162b]">
+          <h2 className="mt-6 text-[44px] font-extrabold leading-[1.18] tracking-[-0.02em] text-[#14162b]">
             {whyUs.title}
             <span className="block">
               {whyUs.secondLinePrefix}{" "}
-              <span className="text-[#d9002b]">{whyUs.highlight}</span>
+              <span className="text-[#d9002b] ">{whyUs.highlight}</span>
             </span>
           </h2>
 
-          <p className="mt-5 max-w-[680px] text-[15px] leading-[1.6] text-[#2c3340] sm:text-[19px]">
+          <p className="mt-5 max-w-[650px] text-[15px] leading-[1.6] text-[#2c3340] sm:text-[19px]">
             {whyUs.description}
           </p>
 
