@@ -58,7 +58,7 @@ export default function FinZoraHero() {
       <div className="mx-auto grid min-h-[560px] max-w-[1600px] items-center gap-6 px-5 py-12 sm:px-8 lg:min-h-[calc(100svh-96px)] lg:grid-cols-[1fr_1.05fr] lg:gap-[2vw] lg:px-[5.5vw] lg:py-0">
         {/* Left: text */}
         <div className="hero-enter-left relative z-10 flex flex-col items-start">
-          <h1 className="text-[48px] font-extrabold leading-[1.15] tracking-[-0.02em] text-[#14162b]">
+          <h1 className="text-[36px] lg:text-[48px] font-extrabold leading-[1.15] tracking-[-0.02em] text-[#14162b]">
             {hero.title}
             <span className="block">
               for <span className="text-[#d9002b]">{hero.highlight}</span>{" "}

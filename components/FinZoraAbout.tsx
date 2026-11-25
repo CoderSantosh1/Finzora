@@ -150,7 +150,7 @@ export default function FinZoraAbout() {
             </ul>
 
             {/* Clients reviews card */}
-            <div className="flex w-[140px] shrink-0 flex-col items-center rounded-[16px] bg-[#fde8ec] px-4 py-5 text-center text-[#d9002b]">
+            <div className="hidden md:flex flex w-[140px] shrink-0 flex-col items-center rounded-[16px] bg-[#fde8ec] px-4 py-5 text-center text-[#d9002b]">
               <PeopleIcon />
               <p className="mt-2 text-[17px] font-bold leading-[1.2] text-[#14162b]">
                 {about.reviews.title[0]}
