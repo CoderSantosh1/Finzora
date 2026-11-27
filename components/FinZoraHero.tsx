@@ -53,7 +53,7 @@ export default function FinZoraHero() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden bg-gradient-to-br from-[#fde0ea] via-[#fff1ec] to-[#fde0ec]"
+      className="relative isolate overflow-hidden bg-gradient-to-r from-[#fff4f3] via-[#fdeef3] to-[#fde1f1]"
     >
       <div className="mx-auto grid min-h-[560px] max-w-[1600px] items-center gap-6 px-5 py-12 sm:px-8 lg:min-h-[calc(100svh-96px)] lg:grid-cols-[1fr_1.05fr] lg:gap-[2vw] lg:px-[5.5vw] lg:py-0">
         {/* Left: text */}
@@ -73,16 +73,15 @@ export default function FinZoraHero() {
         </div>
 
         {/* Right: family image + doodles */}
-        <div className="hero-enter-right relative mx-auto h-[360px] w-full max-w-[640px] sm:h-[460px] lg:mx-0 lg:h-[min(520px,calc(100svh-160px))] lg:max-w-none">
-          <HomeDoodles />
-
+        <div className="hero-enter-right relative mx-auto flex h-[360px] w-full max-w-[640px] items-end justify-center sm:h-[460px] lg:mx-0 lg:h-[min(520px,calc(100svh-160px))] lg:max-w-none">
           <Image
             src={hero.image}
             alt={hero.imageAlt}
-            fill
+            width={1200}
+            height={788}
             priority
             sizes="(max-width: 1024px) 90vw, 700px"
-            className="object-contain object-bottom"
+            className="img-feather h-auto max-h-full w-auto max-w-full"
           />
         </div>
       </div>

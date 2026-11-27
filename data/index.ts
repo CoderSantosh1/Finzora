@@ -9,6 +9,8 @@ export type Service = {
   accent?: string;
   description: string;
   image: string;
+  /** Image has its own opaque background: feather its edges into the section */
+  blendEdges?: boolean;
 };
 
 export type Benefit = {

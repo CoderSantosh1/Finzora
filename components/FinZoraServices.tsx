@@ -1,16 +1,8 @@
 import Image from "next/image";
 import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
+import type { Service, SiteData } from "@/data";
 
 const siteData: SiteData = categoryData;
-
-type Service = {
-  title: string;
-  /** Optional second line of the heading, shown in red */
-  accent?: string;
-  description: string;
-  image: string;
-};
 
 const services: Service[] = siteData.services.items;
 
@@ -60,16 +52,19 @@ export default function FinZoraServices() {
               >
                 {/* Illustration */}
                 <div
-                  className={`relative mx-auto h-[300px] w-full max-w-[640px] sm:h-[400px] lg:mx-0 lg:h-[420px] lg:max-w-none ${
+                  className={`relative mx-auto flex items-center justify-center h-[300px] w-full max-w-[640px] sm:h-[400px] lg:mx-0 lg:h-[420px] lg:max-w-none ${
                     isReversed ? "lg:order-2" : ""
                   }`}
                 >
                   <Image
                     src={service.image}
                     alt={`${service.title} illustration`}
-                    fill
+                    width={1200}
+                    height={1200}
                     sizes="(max-width: 1024px) 90vw, 640px"
-                    className="object-contain object-center"
+                    className={`h-auto max-h-full w-auto max-w-full ${
+                      service.blendEdges ? "img-feather mix-blend-multiply" : ""
+                    }`}
                   />
                 </div>
 

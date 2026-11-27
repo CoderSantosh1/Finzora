@@ -155,7 +155,9 @@ export default function FinZoraFooter() {
                 <a
                   key={s.label}
                   href={s.href}
-                  aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${s.label} (opens in a new tab)`}
                   className="grid h-[30px] w-[30px] place-items-center rounded-full border border-white/50 text-white transition hover:border-[#e0102f] hover:bg-[#e0102f]"
                 >
                   {s.icon}

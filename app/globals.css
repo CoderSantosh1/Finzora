@@ -13,6 +13,24 @@ body {
   overflow-x: hidden;
 }
 
+/* Fade an opaque image's edges into the section behind it.
+   In the components layer so [--feather-*:x] utilities can override the defaults. */
+@layer components {
+  .img-feather {
+    --feather-x: 10%;
+    --feather-top: 10%;
+    --feather-bottom: 10%;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent, #000 var(--feather-x), #000 calc(100% - var(--feather-x)), transparent),
+      linear-gradient(to bottom, transparent, #000 var(--feather-top), #000 calc(100% - var(--feather-bottom)), transparent);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent, #000 var(--feather-x), #000 calc(100% - var(--feather-x)), transparent),
+      linear-gradient(to bottom, transparent, #000 var(--feather-top), #000 calc(100% - var(--feather-bottom)), transparent);
+    mask-composite: intersect;
+  }
+}
+
 section[id] {
   scroll-margin-top: 96px;
 }
