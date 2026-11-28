@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
+import { site } from "@/data";
 
 const iconProps = {
   viewBox: "0 0 48 48",
@@ -37,7 +34,7 @@ function CalculatorIcon({ className = "h-6 w-6" }: { className?: string }) {
 }
 
 const inr = (n: number) =>
-  `${siteData.loanCalculator.currencySymbol} ${Math.round(n).toLocaleString("en-IN")}`;
+  `${site.loanCalculator.currencySymbol} ${Math.round(n).toLocaleString("en-IN")}`;
 
 type SliderProps = {
   label: string;
@@ -106,7 +103,7 @@ function Slider({
 }
 
 export default function FinZoraLoanCalculator() {
-  const { loanCalculator } = siteData;
+  const { loanCalculator } = site;
   const [amount, setAmount] = useState(1000000);
   const [years, setYears] = useState(5);
   const [rate, setRate] = useState(10.5);

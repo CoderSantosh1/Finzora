@@ -1,8 +1,5 @@
 import Image from "next/image";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
+import { site } from "@/data";
 
 const iconProps = {
   viewBox: "0 0 48 48",
@@ -14,10 +11,10 @@ const iconProps = {
   className: "h-[40px] w-[40px]",
 };
 
-const features = siteData.whyUs.benefits;
+const features = site.whyUs.benefits;
 
 export default function FinZoraWhyChooseUs() {
-  const { whyUs } = siteData;
+  const { whyUs } = site;
   return (
     <section
       id="why-choose-us"
@@ -29,10 +26,10 @@ export default function FinZoraWhyChooseUs() {
           <span className="inline-flex items-center gap-2.5 rounded-full bg-[#fde2e8] px-5 py-2.5 text-[15px] font-bold text-[#14162b] sm:text-[18px]">
             <span className="h-3 w-3 rounded-full bg-[#d9002b]" />
             {whyUs.eyebrow}{" "}
-            <span className="text-[#d9002b]">{siteData.common.site.name}</span>
+            <span className="text-[#d9002b]">{site.brand.name}</span>
           </span>
 
-          <h2 className="mt-6 text-[44px] font-extrabold leading-[1.18] tracking-[-0.02em] text-[#14162b]">
+          <h2 className="mt-6 lg:text-[44px] text-[28px] font-bold leading-[1.18] tracking-[-0.02em] text-[#14162b]">
             {whyUs.title}
             <span className="block">
               {whyUs.secondLinePrefix}{" "}
@@ -48,7 +45,7 @@ export default function FinZoraWhyChooseUs() {
           <div className="mt-8 grid w-full gap-4 sm:grid-cols-3 sm:gap-[1.2vw]">
             {features.map((f) => (
               <div
-                key={f.title.join(" ")}
+                key={f.id}
                 className="rounded-[18px] bg-white px-6 py-6 shadow-[0_8px_26px_rgba(160,20,60,0.12)]"
               >
                 <span className="grid h-[66px] w-[66px] place-items-center rounded-[14px] bg-[#fde2e8] text-[#d9002b]">
@@ -89,8 +86,8 @@ export default function FinZoraWhyChooseUs() {
         {/* Right: red illustration panel */}
         <div data-reveal="right" className="relative mx-auto h-[360px] w-full max-w-[640px] overflow-hidden rounded-[28px] sm:h-[480px] lg:mx-0 lg:-ml-[2.5vw] lg:h-[540px] lg:max-w-none">
           <Image
-            src={whyUs.image}
-            alt={whyUs.imageAlt}
+            src={whyUs.image.src}
+            alt={whyUs.image.alt}
             fill
             sizes="(max-width: 1024px) 90vw, 640px"
             className="object-cover object-center"

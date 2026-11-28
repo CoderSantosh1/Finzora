@@ -3,10 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { FormEvent, ReactNode } from "react";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
+import { site } from "@/data";
 
 const iconCls = "h-[22px] w-[22px]";
 
@@ -65,7 +62,7 @@ function Field({ icon, children }: { icon: ReactNode; children: ReactNode }) {
 }
 
 export default function FinZoraContact() {
-  const { contact } = siteData;
+  const { contact } = site;
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -109,19 +106,15 @@ export default function FinZoraContact() {
 
           <div className="relative mt-6 w-full">
             <ul className="relative z-10 w-full max-w-[420px]">
-              {contact.details.map((item, i) => (
-                <li
-                  key={item.title}
-                  className={`flex items-center gap-4 py-4 ${
-                    i > 0 ? "border-t border-[#ead5dc]" : ""
-                  }`}
-                >
-                  <span className="grid h-[52px] w-[52px] shrink-0 place-items-center rounded-[12px] bg-[#fde2e8] text-[#d9002b]">
-                    {item.icon === "phone" && <PhoneIcon className="h-6 w-6" />}
-                    {item.icon === "mail" && <MailIcon className="h-6 w-6" />}
-                    {item.icon === "pin" && <PinIcon className="h-6 w-6" />}
-                  </span>
-                  <div>
+              {contact.details.map((item, i) => {
+                const href =
+                  item.icon === "phone"
+                    ? site.brand.phone.href
+                    : item.icon === "mail"
+                      ? site.brand.email.href
+                      : undefined;
+                const content = (
+                  <>
                     <p className="text-[16px] font-bold text-[#14162b] sm:text-[18px]">
                       {item.title}
                     </p>
@@ -133,16 +126,38 @@ export default function FinZoraContact() {
                         {line}
                       </p>
                     ))}
-                  </div>
-                </li>
-              ))}
+                  </>
+                );
+
+                return (
+                  <li
+                    key={item.id}
+                    className={`flex items-center gap-4 py-4 ${
+                      i > 0 ? "border-t border-[#ead5dc]" : ""
+                    }`}
+                  >
+                    <span className="grid h-[52px] w-[52px] shrink-0 place-items-center rounded-[12px] bg-[#fde2e8] text-[#d9002b]">
+                      {item.icon === "phone" && <PhoneIcon className="h-6 w-6" />}
+                      {item.icon === "mail" && <MailIcon className="h-6 w-6" />}
+                      {item.icon === "pin" && <PinIcon className="h-6 w-6" />}
+                    </span>
+                    {href ? (
+                      <a href={href} className="hover:text-[#d9002b] focus-visible:outline-[#d9002b]">
+                        {content}
+                      </a>
+                    ) : (
+                      <div>{content}</div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             {/* Illustration (house, coins, clipboard, calculator) */}
             <div className="relative mx-auto mt-4 h-[220px] w-full max-w-[360px] lg:absolute lg:bottom-0 lg:right-0 lg:mt-0 lg:h-[260px] lg:w-[48%] lg:max-w-none">
               <Image
-                src={contact.image}
-                alt={contact.imageAlt}
+                src={contact.image.src}
+                alt={contact.image.alt}
                 fill
                 sizes="(max-width: 1024px) 360px, 400px"
                 className="object-contain object-right-bottom"
@@ -186,8 +201,8 @@ export default function FinZoraContact() {
                   {contact.fields.loanType}
                 </option>
                 {contact.loanTypes.map((t) => (
-                  <option key={t} value={t}>
-                    {t}
+                  <option key={t.id} value={t.label}>
+                    {t.label}
                   </option>
                 ))}
               </select>

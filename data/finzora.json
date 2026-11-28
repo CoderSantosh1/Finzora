@@ -1,0 +1,546 @@
+{
+  "FinZoraFinance": {
+    "templateComponents": [
+      "template-1"
+    ],
+    "sections": {
+      "Brand": {
+        "variants": {
+          "FinZoraBrand1": {
+            "name": "FinZora",
+            "tagline": "Empowering Your Future",
+            "logo": {
+              "src": "/images/logo.png",
+              "alt": "FinZora - Empowering Your Future"
+            },
+            "whiteLogo": {
+              "src": "/images/white-logo.png",
+              "alt": "FinZora Financial Solutions"
+            },
+            "siteTitle": "Finzora- Empowering your Future",
+            "siteDescription": "Finzora - Empowring Your Future",
+            "phone": {
+              "label": "+1 000000",
+              "href": "tel:+10000000"
+            },
+            "email": {
+              "label": "info@xyz.com",
+              "href": "mailto:info@xyz.com"
+            }
+          }
+        }
+      },
+      "Header": {
+        "variants": {
+          "FinZoraHeader1": {
+            "logo": {
+              "src": "/images/logo.png",
+              "alt": "FinZora - Empowering Your Future"
+            },
+            "navItems": [
+              {
+                "id": "1",
+                "label": "Home",
+                "href": "#home",
+                "sectionId": "home"
+              },
+              {
+                "id": "2",
+                "label": "About Us",
+                "href": "#about",
+                "sectionId": "about"
+              },
+              {
+                "id": "3",
+                "label": "Services",
+                "href": "#services",
+                "sectionId": "services"
+              },
+              {
+                "id": "4",
+                "label": "Why Choose Us",
+                "href": "#why-choose-us",
+                "sectionId": "why-choose-us"
+              },
+              {
+                "id": "5",
+                "label": "Loan Calculator",
+                "href": "#loan-calculator",
+                "sectionId": "loan-calculator"
+              },
+              {
+                "id": "6",
+                "label": "Testimonials",
+                "href": "#testimonials",
+                "sectionId": "testimonials"
+              },
+              {
+                "id": "7",
+                "label": "FAQs",
+                "href": "#faqs",
+                "sectionId": "faqs"
+              }
+            ],
+            "cta": {
+              "label": "Contact Us",
+              "href": "#contact"
+            },
+            "menuOpenLabel": "Open menu",
+            "menuCloseLabel": "Close menu",
+            "mainNavigationLabel": "Main",
+            "mobileNavigationLabel": "Mobile"
+          }
+        }
+      },
+      "Banner": {
+        "variants": {
+          "FinZoraBanner1": {
+            "titlePrefix": "Your Trusted Partner",
+            "titleHighlight": "Quick & Easy",
+            "titleSuffix": "Loans.",
+            "description": "Get the financial support you need, when you need it.",
+            "secondLine": "Simple process, faster approval and flexible options.",
+            "image": {
+              "src": "/images/hero-family.webp",
+              "alt": "Happy family making a house shape with their hands"
+            }
+          }
+        }
+      },
+      "AboutSection": {
+        "variants": {
+          "FinZoraAbout1": {
+            "eyebrow": "ABOUT COMPANY",
+            "title": "Fin",
+            "titleHighlight": "Zora",
+            "titleLine": "Financial Services",
+            "description": "We are focused on young professionals and small entrepreneurs who are often under-served by traditional lenders. Our mission is to build a simple, transparent and accessible financial ecosystem that helps mid-income groups achieve their goals.",
+            "image": {
+              "src": "/images/about-illustration.webp",
+              "alt": "Illustration of a finance advisor with a calculator and coins"
+            },
+            "points": [
+              {
+                "id": "1",
+                "label": "Wide Range of Loan & Finance Options"
+              },
+              {
+                "id": "2",
+                "label": "Experienced & Qualified Advisors"
+              },
+              {
+                "id": "3",
+                "label": "Dedicated Support Team"
+              }
+            ],
+            "stats": [
+              {
+                "id": "1",
+                "label": "Satisfied",
+                "secondLine": "Customers"
+              },
+              {
+                "id": "2",
+                "label": "Our Global",
+                "secondLine": "Agents"
+              }
+            ],
+            "statSuffix": "+",
+            "reviews": {
+              "title": [
+                "Clients",
+                "Reviews"
+              ],
+              "value": "256k"
+            }
+          }
+        }
+      },
+      "Services": {
+        "variants": {
+          "FinZoraServices1": {
+            "eyebrow": "Our Services",
+            "titlePrefix": "Flexible Loan ",
+            "titleHighlight": "Solutions",
+            "titleSuffix": " for Your Needs",
+            "description": "Explore our range of loan options designed to support your personal and financial goals.",
+            "items": [
+              {
+                "id": "1",
+                "title": "Personal Loan",
+                "description": "Get instant financial support for your personal needs, whether it’s a medical emergency, home renovation, travel, education, or any other important expense. Our personal loans come with flexible repayment options, quick approval, and minimal paperwork.",
+                "image": "/images/Our-services.webp",
+                "blendEdges": true
+              },
+              {
+                "id": "2",
+                "title": "Business Loan",
+                "description": "A business loan is a quick and flexible financing solution designed to support your business needs, such as expanding operations, purchasing equipment, managing working capital, or opening a new branch. Get the funds you need with competitive interest rates, simple documentation, and fast approval to keep your business moving forward.",
+                "image": "/images/Business-loan.webp"
+              },
+              {
+                "id": "3",
+                "title": "Vehicle Loan",
+                "description": "A vehicle loan is a quick and convenient financing solution to help you buy your dream car or bike. Get up to 100% funding, competitive interest rates, flexible repayment options, and minimal documentation for a hassle-free experience.",
+                "image": "/images/Vehicle-loan.webp"
+              },
+              {
+                "id": "4",
+                "title": "Solar Rooftop Finance",
+                "accent": "For Individuals",
+                "description": "Get easy and affordable financing to install solar panels on your home. Our solar rooftop finance helps you switch to clean, renewable energy with low EMIs, flexible repayment options, and minimal paperwork. Save on electricity bills, reduce your carbon footprint, and make a smart, sustainable investment for a brighter future.",
+                "image": "/images/Solar-rooftop-finance-new.webp"
+              }
+            ]
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "FinZoraWhyChooseUs1": {
+            "eyebrow": "Why Choose",
+            "title": "Your Trusted Financial Partner",
+            "secondLinePrefix": "for a",
+            "highlight": "Brighter Future",
+            "description": "At FinZora, we offer simple, transparent, and reliable loan solutions to meet your personal and business financial needs.",
+            "image": {
+              "src": "/images/why-choose-us.webp",
+              "alt": "Smiling man with a laptop beside a money bag, loan and growth icons"
+            },
+            "benefits": [
+              {
+                "id": "1",
+                "title": [
+                  "Trusted &",
+                  "Transparent"
+                ],
+                "description": "Honest processes with clear terms and no hidden charges.",
+                "icon": "handshake"
+              },
+              {
+                "id": "2",
+                "title": [
+                  "Quick",
+                  "Approval"
+                ],
+                "description": "Get fast approvals and hassle-free disbursement.",
+                "icon": "bolt"
+              },
+              {
+                "id": "3",
+                "title": [
+                  "Flexible",
+                  "Loan Options"
+                ],
+                "description": "A wide range of loans tailored to your unique financial goals.",
+                "icon": "shield"
+              }
+            ]
+          }
+        }
+      },
+      "LoanCalculator": {
+        "variants": {
+          "FinZoraLoanCalculator1": {
+            "eyebrow": "Loan Calculator",
+            "title": "Calculate Your",
+            "highlight": "EMI Instantly",
+            "description": "Plan your loan better with our simple and easy-to-use loan calculator.",
+            "amountLabel": "Loan Amount",
+            "tenureLabel": "Loan Tenure",
+            "interestLabel": "Interest Rate",
+            "monthlyEmiLabel": "Your Monthly EMI",
+            "totalInterestLabel": "Total Interest",
+            "totalPayableLabel": "Total Payable",
+            "buttonLabel": "Calculate EMI",
+            "yearLabel": "Year",
+            "yearsLabel": "Years",
+            "monthLabel": "/ month",
+            "amountSummaryLabel": "Loan Amount",
+            "interestRateSuffix": "% p.a.",
+            "currencySymbol": "₹"
+          }
+        }
+      },
+      "Testimonial": {
+        "variants": {
+          "FinZoraTestimonial1": {
+            "eyebrow": "Testimonials",
+            "title": "What Our",
+            "highlight": "Clients Say",
+            "description": "Real experiences from our valued customers who have achieved their financial goals with FinZora.",
+            "chooseLabel": "Choose a testimonial",
+            "ratingLabel": "5 out of 5 stars",
+            "items": [
+              {
+                "id": "1",
+                "name": "Priya Sharma",
+                "role": "Salaried Professional",
+                "quote": "FinZora made my personal loan so easy. The approval was fast, the documentation was minimal and the team kept me informed at every step.",
+                "image": "/images/Testmo-1.webp"
+              },
+              {
+                "id": "2",
+                "name": "Amit Verma",
+                "role": "Business Owner",
+                "quote": "The loan process was smooth, quick, and completely hassle-free. The team was very supportive and helped me get the best loan option for my needs.",
+                "image": "/images/Testmo-2.webp"
+              },
+              {
+                "id": "3",
+                "name": "Neha Singh",
+                "role": "Home Owner",
+                "quote": "I got my solar rooftop financing sorted within days. Low EMIs, clear terms and absolutely no hidden charges. Highly recommended!",
+                "image": "/images/Testmo-3.webp"
+              },
+              {
+                "id": "4",
+                "name": "Rahul Mehta",
+                "role": "Entrepreneur",
+                "quote": "Their business loan helped me expand my operations without any stress. Transparent process and a very professional team.",
+                "image": "/images/Testmo-4.webp"
+              },
+              {
+                "id": "5",
+                "name": "Anjali Desai",
+                "role": "Marketing Manager",
+                "quote": "From application to disbursement, everything was handled professionally. I would happily choose FinZora again for my next loan.",
+                "image": "/images/Testmo-5.webp"
+              }
+            ]
+          }
+        }
+      },
+      "FAQ": {
+        "variants": {
+          "FinZoraFAQ1": {
+            "eyebrow": "FAQs",
+            "title": "Frequently",
+            "titleLine": "Asked",
+            "highlight": "Questions",
+            "description": "Find quick answers to the most common questions about our loan and financial services.",
+            "image": {
+              "src": "/images/faq-illustration.webp",
+              "alt": "FAQ clipboard with a question mark"
+            },
+            "items": [
+              {
+                "id": "1",
+                "question": "What types of loans do you offer?",
+                "answer": "We offer a range of loan solutions including Personal Loans, Business Loans, Vehicle Loans, Home Loans, and Loan Against Property (LAP) to meet various financial needs."
+              },
+              {
+                "id": "2",
+                "question": "What is the eligibility for a loan?",
+                "answer": "Eligibility depends on the loan type, but generally you should be an Indian resident aged 21 to 60 with a stable income source, a good credit history and valid KYC documents."
+              },
+              {
+                "id": "3",
+                "question": "How long does it take to get loan approval?",
+                "answer": "Most applications are reviewed within 24 to 48 hours once all documents are submitted. Disbursement follows quickly after approval and verification."
+              },
+              {
+                "id": "4",
+                "question": "What documents are required to apply?",
+                "answer": "You will typically need identity and address proof (Aadhaar, PAN), recent bank statements, income proof such as salary slips or ITR, and a passport-size photograph. Business loans may need additional business documents."
+              },
+              {
+                "id": "5",
+                "question": "Can I prepay my loan before the tenure ends?",
+                "answer": "Yes, you can prepay or foreclose your loan before the tenure ends. Applicable prepayment charges, if any, will be clearly shared with you in the loan agreement."
+              },
+              {
+                "id": "6",
+                "question": "How can I track my loan application?",
+                "answer": "Our support team keeps you updated at every step by call, SMS and email. You can also contact us anytime with your application number for the latest status."
+              }
+            ]
+          }
+        }
+      },
+      "ContactSection": {
+        "variants": {
+          "FinZoraContact1": {
+            "eyebrow": "Contact Us",
+            "title": "Get in Touch",
+            "highlight": "With Us",
+            "description": "Have questions or need assistance? Reach out to our team, and we'll be happy to help you.",
+            "formTitle": "Send Us a",
+            "formHighlight": "Message",
+            "submitLabel": "Send Message",
+            "fields": {
+              "name": "Your Name",
+              "email": "Your Email",
+              "phone": "Your Phone",
+              "message": "Your Message",
+              "sending": "Sending...",
+              "success": "Thanks! Your message has been sent.",
+              "loanType": "Loan Type"
+            },
+            "image": {
+              "src": "/images/contact-illustration.webp",
+              "alt": "House, coins, clipboard and calculator illustration"
+            },
+            "details": [
+              {
+                "id": "1",
+                "title": "Call Us",
+                "lines": [
+                  "+1 000000"
+                ],
+                "icon": "phone"
+              },
+              {
+                "id": "2",
+                "title": "Email Us",
+                "lines": [
+                  "info@xyz.com"
+                ],
+                "icon": "mail"
+              },
+              {
+                "id": "3",
+                "title": "Our Office",
+                "lines": [
+                  "123 Financial Avenue, Suite 500",
+                  "New York, NY 10001, United States"
+                ],
+                "icon": "pin"
+              }
+            ],
+            "loanTypes": [
+              {
+                "id": "1",
+                "label": "Personal Loan"
+              },
+              {
+                "id": "2",
+                "label": "Business Loan"
+              },
+              {
+                "id": "3",
+                "label": "Vehicle Loan"
+              },
+              {
+                "id": "4",
+                "label": "Solar Rooftop Finance"
+              },
+              {
+                "id": "5",
+                "label": "Home Loan"
+              },
+              {
+                "id": "6",
+                "label": "Loan Against Property"
+              }
+            ]
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "FinZoraFooter1": {
+            "logo": {
+              "src": "/images/white-logo.png",
+              "alt": "FinZora Financial Solutions"
+            },
+            "aboutText": "Trusted Financial Solutions for Individuals and Businesses.",
+            "phone": {
+              "label": "+1 000000",
+              "href": "tel:+1000000",
+              "text": "Call Us Anytime"
+            },
+            "hours": "Mon – Fri: 9:00 AM to 5:00 PM",
+            "weekend": "Saturday & Sunday: Closed",
+            "quickLinks": [
+              {
+                "id": "1",
+                "label": "Home",
+                "href": "#home",
+                "sectionId": "home"
+              },
+              {
+                "id": "2",
+                "label": "About Us",
+                "href": "#about",
+                "sectionId": "about"
+              },
+              {
+                "id": "3",
+                "label": "Services",
+                "href": "#services",
+                "sectionId": "services"
+              },
+              {
+                "id": "4",
+                "label": "Why Choose Us",
+                "href": "#why-choose-us",
+                "sectionId": "why-choose-us"
+              }
+            ],
+            "moreLinks": [
+              {
+                "id": "1",
+                "label": "Loan Calculator",
+                "href": "#loan-calculator",
+                "sectionId": "loan-calculator"
+              },
+              {
+                "id": "2",
+                "label": "Testimonials",
+                "href": "#testimonials",
+                "sectionId": "testimonials"
+              },
+              {
+                "id": "3",
+                "label": "FAQs",
+                "href": "#faqs",
+                "sectionId": "faqs"
+              },
+              {
+                "id": "4",
+                "label": "Contact Us",
+                "href": "#contact",
+                "sectionId": "contact"
+              }
+            ],
+            "socials": [
+              {
+                "id": "1",
+                "label": "Facebook",
+                "href": "https://www.facebook.com/",
+                "icon": "Facebook"
+              },
+              {
+                "id": "2",
+                "label": "X",
+                "href": "https://x.com/",
+                "icon": "X"
+              },
+              {
+                "id": "3",
+                "label": "LinkedIn",
+                "href": "https://www.linkedin.com/",
+                "icon": "LinkedIn"
+              },
+              {
+                "id": "4",
+                "label": "YouTube",
+                "href": "https://www.youtube.com/",
+                "icon": "YouTube"
+              },
+              {
+                "id": "5",
+                "label": "Instagram",
+                "href": "https://www.instagram.com/",
+                "icon": "Instagram"
+              }
+            ],
+            "copyright": "© 2026 FinZora Financial Solutions. All Rights Reserved. Powred by Lestow.",
+            "backToTopLabel": "Back to top"
+          }
+        }
+      }
+    }
+  }
+}

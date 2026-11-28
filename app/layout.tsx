@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/FinZoraNavbar"
-import categoryData from "@/data/category.json";
+import { site } from "@/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: categoryData.metadata.title,
-  description: categoryData.metadata.description,
+  title: site.brand.siteTitle,
+  description: site.brand.siteDescription,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

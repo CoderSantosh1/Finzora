@@ -1,13 +1,10 @@
 import Image from "next/image";
-import categoryData from "@/data/category.json";
-import type { Service, SiteData } from "@/data";
+import { site, type FinZoraServiceItem } from "@/data";
 
-const siteData: SiteData = categoryData;
-
-const services: Service[] = siteData.services.items;
+const services: FinZoraServiceItem[] = site.services.items;
 
 export default function FinZoraServices() {
-  const { services: servicesData } = siteData;
+  const { services: servicesData } = site;
   return (
     <section
       id="services"
@@ -25,7 +22,7 @@ export default function FinZoraServices() {
           </div>
 
           <h2 className="mt-4 text-[clamp(28px,3.4vw,50px)] font-extrabold leading-[1.15] tracking-[-0.02em] text-[#14162b]">
-            {servicesData.title}
+            {servicesData.titlePrefix}
             <span className="text-[#d9002b]">{servicesData.titleHighlight}</span>
             {servicesData.titleSuffix}
           </h2>
@@ -43,7 +40,7 @@ export default function FinZoraServices() {
             return (
               <article
                 data-reveal={i % 2 === 0 ? "left" : "right"}
-                key={service.title}
+                key={service.id}
                 className={`grid items-center gap-8 lg:gap-[3vw] ${
                   isReversed
                     ? "lg:grid-cols-[0.95fr_1.05fr]"

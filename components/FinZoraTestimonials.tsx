@@ -2,11 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
-const testimonials = siteData.testimonials.items;
+import { site } from "@/data";
+const testimonials = site.testimonials.items;
 
 // Vertical offsets that give the avatar row its curved look (desktop only)
 const arcOffsets = [
@@ -28,7 +25,7 @@ function QuoteMark({ className }: { className?: string }) {
 
 function Stars() {
   return (
-    <div className="flex items-center gap-1" aria-label={siteData.testimonials.ratingLabel}>
+    <div className="flex items-center gap-1" aria-label={site.testimonials.ratingLabel}>
       {Array.from({ length: 5 }).map((_, i) => (
         <svg key={i} viewBox="0 0 24 24" className="h-[26px] w-[26px] text-[#fbbf24]" fill="currentColor">
           <path d="m12 2 2.900 6.300 6.900.8-5.100 4.700 1.400 6.800L12 17.200 5.900 20.600l1.400-6.800L2.200 9.100l6.900-.8L12 2Z" />
@@ -39,7 +36,7 @@ function Stars() {
 }
 
 export default function FinZoraTestimonials() {
-  const { testimonials: testimonialsData } = siteData;
+  const { testimonials: testimonialsData } = site;
   const [active, setActive] = useState(1);
 
   // Auto-advance; restarts whenever the active item changes
@@ -93,7 +90,7 @@ export default function FinZoraTestimonials() {
             const isActive = i === active;
             return (
             <button
-  key={t.image}
+  key={t.id}
   type="button"
   role="tab"
   aria-selected={isActive}

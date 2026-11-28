@@ -3,11 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
-const navLinks = siteData.navigation;
+import { site } from "@/data";
+const { header } = site;
+const navLinks = header.navItems;
 
 export default function FinZoraNavbar() {
   const [active, setActive] = useState("home");
@@ -24,24 +22,41 @@ export default function FinZoraNavbar() {
 
   // Highlight the link of the section currently in view
   useEffect(() => {
-    const sections = navLinks
-      .map((link) => document.getElementById(link.id))
+    const sections = [...navLinks.map((link) => link.sectionId), "contact"]
+      .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
 
     if (sections.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActive(visible[0].target.id);
-      },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
-    );
+    let frame = 0;
+    const updateActiveSection = () => {
+      if (frame) return;
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const activationLine = window.innerHeight * 0.4;
+        const activeSection =
+          sections.find((section) => {
+            const { top, bottom } = section.getBoundingClientRect();
+            return top <= activationLine && bottom > activationLine;
+          }) ??
+          [...sections].reverse().find((section) => {
+            const { top, bottom } = section.getBoundingClientRect();
+            return top < window.innerHeight && bottom > 0;
+          });
+
+        if (activeSection) setActive(activeSection.id);
+      });
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   // Close the mobile menu on desktop resize
@@ -69,10 +84,10 @@ export default function FinZoraNavbar() {
     >
       <div className="mx-auto flex h-[84px] max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:h-[96px] lg:px-[5.5vw]">
         {/* Logo */}
-        <Link href="#home" aria-label={siteData.common.site.description} className="flex shrink-0 items-center">
+        <Link href="#home" aria-label={header.logo.alt} className="flex shrink-0 items-center">
           <Image
-            src={siteData.common.site.logo}
-            alt={siteData.common.site.description}
+            src={header.logo.src}
+            alt={header.logo.alt}
             width={260}
             height={80}
             priority
@@ -82,16 +97,16 @@ export default function FinZoraNavbar() {
 
         {/* Desktop nav */}
         <nav
-          aria-label={siteData.common.site.mainNavigationLabel}
+          aria-label={header.mainNavigationLabel}
           className="hidden items-center gap-7 lg:flex xl:gap-[34px]"
         >
           {navLinks.map((link) => {
-            const isActive = active === link.id;
+            const isActive = active === link.sectionId;
             return (
               <Link
-                key={link.id}
+                key={link.sectionId}
                 href={link.href}
-                onClick={() => setActive(link.id)}
+                onClick={() => setActive(link.sectionId)}
                 aria-current={isActive ? "page" : undefined}
                 className={`relative whitespace-nowrap py-3 text-[16px] transition-colors ${
                   isActive
@@ -114,9 +129,11 @@ export default function FinZoraNavbar() {
         {/* CTA */}
         <Link
           href="#contact"
+          onClick={() => setActive("contact")}
+          aria-current={active === "contact" ? "location" : undefined}
           className="hidden shrink-0 rounded-[8px] bg-[#d9002b] px-9 py-3.5 text-[18px] font-bold text-white shadow-[0_8px_18px_rgba(217,0,43,0.3)] transition hover:bg-[#bd0025] lg:inline-block"
         >
-          {siteData.common.site.contactButtonLabel}
+          {header.cta.label}
         </Link>
 
         {/* Mobile menu button */}
@@ -127,8 +144,8 @@ export default function FinZoraNavbar() {
           aria-controls="finzora-mobile-menu"
           aria-label={
             open
-              ? siteData.common.site.menuCloseLabel
-              : siteData.common.site.menuOpenLabel
+              ? header.menuCloseLabel
+              : header.menuOpenLabel
           }
           className="grid h-11 w-11 place-items-center rounded-md border border-[#d9002b]/30 bg-white/60 text-[#d9002b] lg:hidden"
         >
@@ -161,14 +178,14 @@ export default function FinZoraNavbar() {
       >
         <div className="overflow-hidden">
           <nav
-            aria-label={siteData.common.site.mobileNavigationLabel}
+            aria-label={header.mobileNavigationLabel}
             className="flex flex-col px-5 py-4 sm:px-8"
           >
             {navLinks.map((link) => {
-              const isActive = active === link.id;
+              const isActive = active === link.sectionId;
               return (
                 <Link
-                  key={link.id}
+                  key={link.sectionId}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   aria-current={isActive ? "page" : undefined}
@@ -185,10 +202,14 @@ export default function FinZoraNavbar() {
 
             <Link
               href="#contact"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setActive("contact");
+                setOpen(false);
+              }}
+              aria-current={active === "contact" ? "location" : undefined}
               className="mt-4 inline-flex items-center justify-center rounded-[8px] bg-[#d9002b] px-6 py-3 text-[17px] font-bold text-white"
             >
-              {siteData.common.site.contactButtonLabel}
+              {header.cta.label}
             </Link>
           </nav>
         </div>

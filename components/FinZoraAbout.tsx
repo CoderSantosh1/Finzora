@@ -1,10 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
+import { site } from "@/data";
 
 const iconProps = {
   viewBox: "0 0 64 64",
@@ -75,10 +72,10 @@ function CheckIcon() {
   );
 }
 
-const points = siteData.about.points;
+const points = site.about.points;
 
 export default function FinZoraAbout() {
-  const { about } = siteData;
+  const { about } = site;
   return (
     <section
       id="about"
@@ -111,8 +108,8 @@ export default function FinZoraAbout() {
           {/* Illustration */}
           <div className="relative h-[340px] w-full sm:h-[460px] sm:flex-1 lg:h-[500px]">
             <Image
-              src={about.image}
-              alt={about.imageAlt}
+              src={about.image.src}
+              alt={about.image.alt}
               fill
               sizes="(max-width: 1024px) 90vw, 600px"
               className="object-contain object-center"
@@ -140,11 +137,11 @@ export default function FinZoraAbout() {
             <ul className="space-y-3">
               {points.map((point) => (
                 <li
-                  key={point}
+                  key={point.id}
                   className="flex items-center gap-3 text-[15px] font-bold text-[#14162b] sm:text-[18px]"
                 >
                   <CheckIcon />
-                  {point}
+                  {point.label}
                 </li>
               ))}
             </ul>

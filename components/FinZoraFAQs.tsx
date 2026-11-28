@@ -2,13 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
+import { site } from "@/data";
 
 export default function FinZoraFAQs() {
-  const { faq } = siteData;
+  const { faq } = site;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -40,8 +37,8 @@ export default function FinZoraFAQs() {
 
           <div className="relative mt-6 h-[240px] w-full max-w-[340px] sm:h-[280px] lg:h-[300px]">
             <Image
-              src={faq.image}
-              alt={faq.imageAlt}
+              src={faq.image.src}
+              alt={faq.image.alt}
               fill
               sizes="340px"
               className="object-contain object-left-bottom"
@@ -55,7 +52,7 @@ export default function FinZoraFAQs() {
             const isOpen = openIndex === i;
             return (
               <div
-                key={item.question}
+                key={item.id}
                 className={`overflow-hidden rounded-[10px] border transition-colors ${
                   isOpen
                     ? "border-[#f3c3cf] bg-[#fde8ee]"

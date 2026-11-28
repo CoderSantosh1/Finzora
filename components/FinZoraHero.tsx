@@ -1,10 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import categoryData from "@/data/category.json";
-import type { SiteData } from "@/data";
-
-const siteData: SiteData = categoryData;
+import { site } from "@/data";
 
 /** Orange line-art home doodles (frame, plant, armchair, lamp) drawn behind the family */
 function HomeDoodles() {
@@ -49,7 +46,7 @@ function HomeDoodles() {
 }
 
 export default function FinZoraHero() {
-  const { hero } = siteData;
+  const hero = site.banner;
   return (
     <section
       id="home"
@@ -59,10 +56,10 @@ export default function FinZoraHero() {
         {/* Left: text */}
         <div className="hero-enter-left relative z-10 flex flex-col items-start">
           <h1 className="text-[36px] lg:text-[48px] font-extrabold leading-[1.15] tracking-[-0.02em] text-[#14162b]">
-            {hero.title}
+            {hero.titlePrefix}
             <span className="block">
-              for <span className="text-[#d9002b]">{hero.highlight}</span>{" "}
-              {hero.suffix}
+              for <span className="text-[#d9002b]">{hero.titleHighlight}</span>{" "}
+              {hero.titleSuffix}
             </span>
           </h1>
 
@@ -75,8 +72,8 @@ export default function FinZoraHero() {
         {/* Right: family image + doodles */}
         <div className="hero-enter-right relative mx-auto flex h-[360px] w-full max-w-[640px] items-end justify-center sm:h-[460px] lg:mx-0 lg:h-[min(520px,calc(100svh-160px))] lg:max-w-none">
           <Image
-            src={hero.image}
-            alt={hero.imageAlt}
+            src={hero.image.src}
+            alt={hero.image.alt}
             width={1200}
             height={788}
             priority
